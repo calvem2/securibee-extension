@@ -1,13 +1,23 @@
 {
   "manifest_version": 2,
-  "name": "securitea",
-  "description": "security tips and tricks",
+  "name": "securi-bee",
+  "description": "the buzz about web security",
   "version": "1.0",
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
 
   "icons": {
     "128": "logo.png"
   },
 
   "permissions": [
-  ]
+    "tabs"
+  ],
+
+  "browser_action": {
+    "default_popup": "password-checker.html"
+  }
 }

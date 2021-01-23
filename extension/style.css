@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body {
+    font-family: montserrat;
+    margin: 0;
+    /*height: 50%%;*/
+    /*overflow: hidden;*/
+}
+
+h1 {
+    font-size: 18pt;
+    background-color: #F0D18F;
+    padding: 10px;
+    margin: 0;
+    color: #3C2109;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 12pt;
+    color: #F0D18F;
+    background-color: #FFFCF4;
+    /*background-color: deepskyblue;*/
+    padding: 10px;
+    margin: 0;
+}
+
+.content-scroll-view {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+/* password tool section */
+#password-checker {
+    display: flex;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#password-checker label{
+    color: #F0D18F;
+    font-size: 10pt;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+#password-input {
+    resize: none;
+    white-space: nowrap;
+}
+
+/* drop down sections */
+.dropdown-container {
+    margin: 10px;
+    padding: 3px;
+}
+
+.dropdown-container {
+    border-bottom: 1px solid #E9BF59;
+}
+
+/* drop down arrows*/
+.arrow {
+    border: solid #E9BF59;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+/* link to website */
+.website-link {
+    /*text-align: right;*/
+    float: right;
+    color: #E9BF59;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* footer */
+.footer {
+    text-align: center;
+    background-color: #E9BF59;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
