@@ -3,10 +3,18 @@
 body {
     font-family: montserrat;
     margin: 0;
+    min-width: 282px;
     /*height: 50%%;*/
     /*overflow: hidden;*/
 }
 
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* extension heading */
 h1 {
     font-size: 18pt;
     background-color: #F0D18F;
@@ -15,16 +23,17 @@ h1 {
     color: #3C2109;
 }
 
+/* section titles */
 h2 {
     font-weight: 600;
     font-size: 12pt;
     color: #F0D18F;
     background-color: #FFFCF4;
-    /*background-color: deepskyblue;*/
     padding: 10px;
     margin: 0;
 }
 
+/* content area of extension */
 .content-scroll-view {
     max-height: 300px;
     overflow-y: scroll;
@@ -38,32 +47,30 @@ h2 {
     margin-bottom: 10px;
 }
 
-.flex {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-#password-checker label{
+/* password checker/info tracking label */
+.tool-label {
     color: #F0D18F;
     font-size: 10pt;
     font-weight: 600;
     margin-left: 10px;
 }
 
+/* text input for password checker*/
 #password-input {
     resize: none;
     white-space: nowrap;
 }
 
-/* drop down sections */
+/* more info drop down sections */
 .dropdown-container {
     margin: 10px;
     padding: 3px;
+    border-bottom: 1px solid #E9BF59;
 }
 
-.dropdown-container {
-    border-bottom: 1px solid #E9BF59;
+/* drop down question/topic*/
+.dropdown-title {
+    margin-right: 5px;
 }
 
 /* drop down arrows*/
@@ -74,23 +81,35 @@ h2 {
     padding: 3px;
 }
 
+/* up arrow */
 .up {
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
 }
 
+/* down arrow */
 .down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
 
+/* content to be displayed in dropdown */
+.dropdown-content {
+    display: none;
+}
+
 /* link to website */
+/*TODO style links (after click, on hover, etc.)*/
 .website-link {
-    /*text-align: right;*/
     float: right;
     color: #E9BF59;
     margin-right: 10px;
     margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.selected-button {
+
 }
 
 /* footer */
