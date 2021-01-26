@@ -1,0 +1,32 @@
+{
+    "platforms": {
+      "p": [
+        {
+          "name": "google",
+          "what-info": [
+            "Google has a lot of different products, including Google, YouTube, Maps, Gmail, Photos, Chrome, Pixels, Contacts, etc. So, Google has access to a lot of your activity data and usually stores it as well. This includes your (1) location history, (2) web & app activity, and (3) YouTube history."
+          ],
+          "who-info": [
+            "For the user, Google says that this data is used to make Google services more useful to you, like improving your Google search results, Google Maps searches, and YouTube recommendations."
+          ],
+          "so-what": [
+            "Depending on the type of activity data you want to change, you can do things like view what data Google has on you, pause Google’s tracking, delete some or all of your past data, have Google automatically delete data that is older than some amount of time, or pause Google’s ad personalization."
+          ]
+        },
+        {
+          "name": "facebook",
+          "what-info": [
+            "Facebook has a lot of different products, including Facebook, Facebook Lite, Messenger, Instagram, WhatsApp, and Portal. So, Facebook has access to a lot of your data."
+          ],
+          "who-info": [
+            "not sure, elections eek"
+          ],
+          "so-what": [
+            "Visit here https://www.facebook.com/privacy/checkup/ to take action on:",
+            "Who can see what you share",
+            "How to keep your account secure"
+          ]
+        }
+      ]
+    }
+  }
