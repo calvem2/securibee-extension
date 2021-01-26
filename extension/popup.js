@@ -20,6 +20,60 @@ window.onload = function() {
             }
         }
     }
+
+    // log raw url and domain name -- upon window load (adapted below)
+    // chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+    //     let url = tabs[0].url;
+    //     // use `url` here inside the callback because it's asynchronous!
+    //     console.log('raw url: ', url);
+        
+    //     var domain = url.replace('http://','').replace('https://','').replace('www','').replace('.com','').replace('.edu','').replace('.org','').split(/[/?#]/)[0];
+    //     // .replace('','')
+
+    //     console.log('domain: ', domain);
+    // });
 };
 
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+    // log raw url and domain name -- upon tabs update (adapted from above)
+    chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+        let url = tab.url;
+        // use `url` here inside the callback because it's asynchronous!
+        console.log('raw url: ', url);
+        
+        var domain = url.replace('http://','').replace('https://','').replace('www','').replace('.com','').replace('.edu','').replace('.org','').split(/[/?#]/)[0];
+        // .replace('','')
+
+        console.log('domain: ', domain);
+    });
+
+    /* TODO: add rules for which extension page to show based on tab url ?
+     * (or potentially change to page action)
+     */
+
+     // if (tab.url.includes('e')) {
+    //     // TODO: set title for popup (tooltip)
+    //     // Note: if we change the extension to be a page action, need to use show()
+    //
+    //     // chrome.pageAction.show(tabId);
+    //     // chrome.pageAction.setTitle({
+    //     //     tabId: tabId,
+    //     //     title: resp.cashback
+    //     // });
+    //     chrome.browserAction.setPopup({
+    //         tabId: tabId,
+    //         popup: "test.html"
+    //     });
+    // } else {
+    //     // chrome.pageAction.show(tabId);
+    //     // chrome.pageAction.setTitle({
+    //     //     tabId: tabId,
+    //     //     title: resp.cashback
+    //     // });
+    //     chrome.browserAction.setPopup({
+    //         tabId: tabId,
+    //         popup: "popup.html"
+    //     });
+    // }
+});
 
