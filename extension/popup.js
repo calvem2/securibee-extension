@@ -20,6 +20,18 @@ window.onload = function() {
             }
         }
     }
+
+    // log raw url and domain name -- upon window load (adapted below)
+    // chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+    //     let url = tabs[0].url;
+    //     // use `url` here inside the callback because it's asynchronous!
+    //     console.log('raw url: ', url);
+        
+    //     var domain = url.replace('http://','').replace('https://','').replace('www','').replace('.com','').replace('.edu','').replace('.org','').split(/[/?#]/)[0];
+    //     // .replace('','')
+
+    //     console.log('domain: ', domain);
+    // });
 };
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
