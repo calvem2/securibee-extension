@@ -41,7 +41,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
         // use `url` here inside the callback because it's asynchronous!
         console.log('raw url: ', url);
         
-        var domain = url.replace('http://','').replace('https://','').replace('www','').replace('.com','').replace('.edu','').replace('.org','').split(/[/?#]/)[0];
+        var domain = url.replace('http://','').replace('https://','').replace('www','').replace('.com','').replace('.edu','').replace('.org','').split(/[/?#]/)[0].replace('.','');
         // .replace('','')
 
         console.log('domain: ', domain);
