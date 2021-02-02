@@ -61,6 +61,11 @@ h2 {
     white-space: nowrap;
 }
 
+/* paragraphs in info tracking tool */
+.tracker-info {
+    margin: 10px;
+}
+
 /* more info drop down sections */
 .dropdown-container {
     margin: 10px;
