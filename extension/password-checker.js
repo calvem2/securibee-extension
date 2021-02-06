@@ -19,12 +19,14 @@ togglePassword.addEventListener('click', function (e) {
 });
 
 window.onload = function() {
-    let passwordChecker = document.getElementById("password-input");
+    dropdownOnClick();
 
+    // password checker functionality
+    let passwordChecker = document.getElementById("password-input");
     passwordChecker.oninput = function () {
         // console.log(passwordChecker.value);
         validatePassword();
-    }
+    };
 
     function validatePassword() {
         if (!passwordEmpty(passwordChecker.value)) {

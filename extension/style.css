@@ -135,6 +135,7 @@ h2 {
     border-bottom: 1px solid #E9BF59;
 }
 
+
 /* drop down question/topic*/
 .dropdown-title {
     margin-right: 5px;
@@ -163,6 +164,11 @@ h2 {
 /* content to be displayed in dropdown */
 .dropdown-content {
     display: none;
+}
+
+.dropdown-content ul{
+    margin-left: 20px;
+    padding: 0;
 }
 
 /* link to website */
