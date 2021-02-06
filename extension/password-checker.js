@@ -1,12 +1,22 @@
-// >= 12 characters
-// upper & lower case, special symbols, numbers
-    // intersperse throughout
-// no real words, names
-// no repeating characters
-// avoid common keyboard sequences
-
 let PASSWORD_LENGTH = 12;
 let COMMON_SEQUENCES = ['qwerty', 'asdf', 'zxcvb', 'jkl;', '123', '1234', '123456'];
+
+// load common passwords from file
+let commonPswds;
+fetch('commonPasswords.txt')
+    .then(response => response.text())
+    .then(text => commonPswds = text.split(/\r?\n/));
+
+// add onclick to eye icon
+const togglePassword = document.getElementById('toggle-password');
+const password = document.getElementById('password-input');
+togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
 
 window.onload = function() {
     let passwordChecker = document.getElementById("password-input");
@@ -20,6 +30,7 @@ window.onload = function() {
         if (!passwordEmpty(passwordChecker.value)) {
             checkLength(passwordChecker.value);
             commonSequence(passwordChecker.value);
+            commonPasswords(passwordChecker.value);
             containsNumber(passwordChecker.value);
             containsSymbol(passwordChecker.value);
             noSameLetterSequences(passwordChecker.value);
@@ -54,6 +65,26 @@ window.onload = function() {
         }
         document.querySelector("#password-common span").innerHTML = matchedSeqs;
     }
+
+    // Check to see if any common sequences are in the password
+    function commonPasswords(password) {
+        console.log(commonPswds);
+        // Check common sequences
+        document.getElementById("common-password-warning").style.display = "none";
+        let matchedPasswords = "";   // common sequences detected
+        for (let i = 0; i < commonPswds.length; i++) {
+            // If common sequence detected, change color and append sequence to matchedSeqs for user feedback
+            if (password.includes(commonPswds[i])) {
+                document.getElementById("common-password-warning").style.display = "flex";
+                matchedPasswords = matchedPasswords.length === 0 ? ": " + commonPswds[i] : matchedPasswords + ", " + commonPswds[i];
+            }
+        }
+        // if (matchedPasswords.length !== 0) {
+        //     matchedSeqs += ")";
+        // }
+        document.querySelector("#common-password-warning span").innerHTML = matchedPasswords;
+    }
+
 
     // Check that there is one upper and lowercase letter in the password
     function checkCase(password) {

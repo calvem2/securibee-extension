@@ -59,8 +59,58 @@ h2 {
 #password-input {
     resize: none;
     white-space: nowrap;
+    width: 80%;
+    height: 25px;
+    margin-left: 15px;
 }
 
+/* eye icon */
+#password-checker i {
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-top: 9px;
+    font-size: 11pt;
+    cursor: pointer;
+    color: gray;
+}
+
+/* warning for common passwords */
+#common-password-warning {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: none;
+    background-color: rgba(247, 122, 64, .2);
+    border-radius: 7px;
+    padding: 5px;
+    /*background-color: #ffcbb8;*/
+    /*justify-content: space-around;*/
+}
+
+#common-password-warning i {
+    /*font-size: 20px;*/
+    /*padding-left: 5px;*/
+    color: #f77a40;
+}
+
+#common-password-warning a, #common-password-warning a:visited {
+    color: black;
+}
+
+#common-password-warning a:hover {
+    color: #d45f28;
+}
+
+#common-password-warning > * {
+    vertical-align: middle;
+    padding: 4px;
+    /*display: inline;*/
+    margin: 0;
+}
+
+#common-password-warning span {
+    /*font-style: italic;*/
+    font-weight: 600;
+}
 /* password requirement container */
 #password-requirements {
     /*margin-left: 98px;*/
