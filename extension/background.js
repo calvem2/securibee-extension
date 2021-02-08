@@ -1,5 +1,5 @@
-// If currently active tab has completed loading, display info from info-tracker.json
-// if the json has info for the active tab's domain name
+// Once currently active tab has completed loading, display info from info-tracker.json
+// on extension info-tracker tab and add notification icon badge
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {  
     if (changeInfo.status === 'complete' && tab.active) {
 
@@ -18,22 +18,35 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
             if ( request.readyState === 4 && request.status === 200 ) {
                 obj = JSON.parse(request.responseText);
                 // console.log('object: ', obj);
-                console.log('name of first platform: ', obj.platforms.p[0].name);
+                // console.log('first platform in json: ', obj.platforms.p[0].name);
 
                 // look through all platform names included in json
+                var hasInfo = false;
                 for (var i = 0; i < obj.platforms.p.length; i++) {
+
                     // if the domain name matches a platform included in the json,
-                    // update the text displayed on extension info-tracker tab
+                    // add icon badge and update the text displayed on extension
                     if (obj.platforms.p[i].name == domain) {
+                        hasInfo = true;
+                        chrome.browserAction.setBadgeText({text: "?", tabId:tabId});
+                        chrome.browserAction.setBadgeBackgroundColor({color:[0,0,0,0], tabId:tabId});
+                        
+                        // browserAction.setPopUp
+
+                        // populate text from json to extension display
                         var textOne = printValues("", obj.platforms.p[i].what);
                         document.getElementById("one").innerHTML = textOne;
-
                         var textTwo = printValues("", obj.platforms.p[i].who);
                         document.getElementById("two").innerHTML = textTwo;
-
                         var textThree = printValues("", obj.platforms.p[i].so);
                         document.getElementById("three").innerHTML = textThree;
+
                     }
+                }
+
+                // if json does not have info on this domain, clear badge text
+                if (!hasInfo) {
+                    chrome.browserAction.setBadgeText({text: "", tabId:tabId});
                 }
             }
         }
