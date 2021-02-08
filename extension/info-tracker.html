@@ -3,9 +3,19 @@
 <head>
     <title>securi-bee</title>
     <link rel="stylesheet" href="style.css"/>
+    <!-- password and info tracking icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<h1 class="title">securi-bee</h1>
+<!-- header for the extension -->
+<div class="header">
+    <div class="flex-child extension-title">
+        <h1 class="title">securi&#8209;bee</h1>
+    </div>
+    <div class="flex-child bee">
+        <img src="securi-bee_bee.png" alt="bee friend" width="130" height="60">
+    </div>
+</div>
 
 <!--  scroll content section  -->
 <div class="content-scroll-view">
@@ -45,14 +55,24 @@
 
     <!--    Link to website    -->
     <!--  TODO: add link to website  -->
-    <a class="website-link">learn more on our website &rarr;</a>
+    <a class="website-link" href="https://securitea.pages.cs.washington.edu/securi-bee-website/index.html" target="_blank">learn more on our website &rarr;</a>
 </div>
 
 <!--  footer  -->
 <!--  TODO: style selected tab  -->
 <div class="flex footer">
-    <a class="nav-button selected-button">information tracking tool</a>
-    <a class="nav-button selected-button" href="password-checker.html">password strength tool</a>
+    <a class="nav-button">
+        <div class="info-tracking-link selected-button">
+            <i class="material-icons">info_outline</i>
+            <p class="tab_text">information tracking tool</p>
+        </div>
+    </a>
+    <a class="nav-button" href="password-checker.html">
+        <div class="password-link">
+            <i class="material-icons">verified_user</i>
+            <p class="tab_text">password strength tool</p>
+        </div>
+    </a>
 </div>
 </body>
 <script src="popup.js"></script>

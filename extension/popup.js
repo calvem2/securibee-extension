@@ -1,4 +1,4 @@
-window.onload = function() {
+function dropdownOnClick() {
     // add onclick to drop downs
     let dropdowns = document.getElementsByClassName("dropdown-container");
     for (let i = 0; i < dropdowns.length; i++) {
@@ -20,6 +20,6 @@ window.onload = function() {
             }
         }
     }
-};
+}
 
 

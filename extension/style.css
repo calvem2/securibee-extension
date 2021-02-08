@@ -4,8 +4,6 @@ body {
     font-family: montserrat;
     margin: 0;
     min-width: 282px;
-    /*height: 50%%;*/
-    /*overflow: hidden;*/
 }
 
 .flex {
@@ -17,20 +15,36 @@ body {
 /* extension heading */
 h1 {
     font-size: 18pt;
-    background-color: #F0D18F;
+    /*background-color: rgba(254, 213, 33, 0.9);*/
     padding: 10px;
     margin: 0;
     color: #3C2109;
+}
+
+/* header */
+.header {
+    background-color: rgba(254, 213, 33, 0.9);
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+    margin-top: 10px;
 }
 
 /* section titles */
 h2 {
     font-weight: 600;
     font-size: 12pt;
-    color: #F0D18F;
-    background-color: #FFFCF4;
+    color: #3C2109;
     padding: 10px;
     margin: 0;
+    background-color: #FFF1CA;
+    text-align: center;
+    margin-left: 7px;
+    margin-right: 7px;
+    margin-top: 7px;
+    border-radius: 10px;
 }
 
 /* content area of extension */
@@ -49,7 +63,7 @@ h2 {
 
 /* password checker/info tracking label */
 .tool-label {
-    color: #F0D18F;
+    color: #3C2109;
     font-size: 10pt;
     font-weight: 600;
     margin-left: 10px;
@@ -59,18 +73,92 @@ h2 {
 #password-input {
     resize: none;
     white-space: nowrap;
+    width: 80%;
+    height: 25px;
+    margin-left: 15px;
+}
+
+/* eye icon */
+#password-checker i {
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-top: 9px;
+    font-size: 11pt;
+    cursor: pointer;
+    color: gray;
+}
+
+/* warning for common passwords */
+#common-password-warning {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: none;
+    background-color: rgba(247, 122, 64, .2);
+    border-radius: 7px;
+    padding: 5px;
+    /*background-color: #ffcbb8;*/
+    /*justify-content: space-around;*/
+}
+
+#common-password-warning i {
+    /*font-size: 20px;*/
+    /*padding-left: 5px;*/
+    color: #f77a40;
+}
+
+#common-password-warning a, #common-password-warning a:visited {
+    color: black;
+}
+
+#common-password-warning a:hover {
+    color: #d45f28;
+}
+
+#common-password-warning > * {
+    vertical-align: middle;
+    padding: 4px;
+    /*display: inline;*/
+    margin: 0;
+}
+
+#common-password-warning span {
+    /*font-style: italic;*/
+    font-weight: 600;
+}
+/* password requirement container */
+#password-requirements {
+    /*margin-left: 98px;*/
+    margin-left: 10px;
+    padding: 0 0 0 20px;
+}
+
+/* password requirements */
+#password-requirements p {
+    /*margin: 6px;*/
+}
+
+/* common sequences used in password */
+#password-common span {
+    color: #ab2000;
 }
 
 /* more info drop down sections */
 .dropdown-container {
     margin: 10px;
     padding: 3px;
-    border-bottom: 1px solid #E9BF59;
+    border-bottom: 1px solid #edbc0c;
 }
 
 /* drop down question/topic*/
 .dropdown-title {
     margin-right: 5px;
+    font-weight: 600;
+    color: #3C2109;
+}
+
+/* first dropdown element on password tool */
+.dropdown-container .strong-password {
+    margin: 0;
 }
 
 /* drop down arrows*/
@@ -96,26 +184,61 @@ h2 {
 /* content to be displayed in dropdown */
 .dropdown-content {
     display: none;
+    color: #3C2109;
+}
+
+.dropdown-content ul{
+    margin-left: 20px;
+    padding: 0;
 }
 
 /* link to website */
 /*TODO style links (after click, on hover, etc.)*/
 .website-link {
     float: right;
-    color: #E9BF59;
+    color: #5ea0ad;
     margin-right: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
     text-decoration: none;
-}
-
-.selected-button {
-
 }
 
 /* footer */
 .footer {
     text-align: center;
-    background-color: #E9BF59;
+}
+
+.tab_text {
+    margin: 0;
+}
+
+/* button to get to the info tracking tool */
+.info-tracking-link {
     padding-top: 10px;
     padding-bottom: 10px;
+    background-color: rgba(254, 213, 33, 0.9);
+    border-bottom: 5px solid rgba(254, 213, 33, 0.9);
+}
+
+/* button to get to the info tracking tool */
+.password-link {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(254, 213, 33, 0.9);
+    border-bottom: 5px solid rgba(254, 213, 33, 0.9);
+}
+
+/* info tracking link */
+.nav-button {
+    text-decoration: none;
+    color: #3C2109;
+}
+
+/* selected tab */
+.selected-button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(254, 213, 33, 0.9);
+    font-weight: bold;
+    border-bottom: 5px solid #593515;
 }
