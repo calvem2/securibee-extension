@@ -28,10 +28,11 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
                     // add icon badge and update the text displayed on extension
                     if (obj.platforms.p[i].name == domain) {
                         hasInfo = true;
-                        chrome.browserAction.setBadgeText({text: "?", tabId:tabId});
+                        chrome.browserAction.setBadgeText({text: "?", tabId: tabId});
                         chrome.browserAction.setBadgeBackgroundColor({color:[0,0,0,0], tabId:tabId});
                         
-                        // browserAction.setPopUp
+                        // attempt to make info-tracker popup - nothing happens
+                        chrome.browserAction.setPopup({popup: "info-tracker.html", tabId: tabId});
 
                         // populate text from json to extension display
                         var textOne = printValues("", obj.platforms.p[i].what);
