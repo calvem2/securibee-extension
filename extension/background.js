@@ -39,7 +39,7 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
 
                 // if json does not have info on this domain, clear badge text
                 if (!hasInfo) {
-                    chrome.browserAction.setBadgeText({text: "", tabId:tabId});
+                    chrome.browserAction.setBadgeText({text: "", tabId:tabs[0].id});
                 }
             }
         }
