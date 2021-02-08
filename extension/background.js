@@ -1,11 +1,7 @@
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-    // if (changeInfo.status === 'complete') {
-        // chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+// If currently active tab has completed loading, display info from info-tracker.json
+// if the json has info for the active tab's domain name
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {  
     if (changeInfo.status === 'complete' && tab.active) {
-
-        // alert('1');
-
-
 
         // extract raw url and domain name of current tab
         var url = new URL(tab.url);
@@ -27,34 +23,33 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
             // if the domain name matches a platform included in the json,
             // update the text displayed on extension info-tracker tab
             if (obj.platforms.p[i].name == domain) {
-                var textOne = printValues(obj.platforms.p[i].what);
+                var textOne = printValues("", obj.platforms.p[i].what);
                 document.getElementById("one").innerHTML = textOne;
 
-                var textTwo = printValues(obj.platforms.p[i].who);
+                var textTwo = printValues("", obj.platforms.p[i].who);
                 document.getElementById("two").innerHTML = textTwo;
 
-                var textThree = printValues(obj.platforms.p[i].so);
+                var textThree = printValues("", obj.platforms.p[i].so);
                 document.getElementById("three").innerHTML = textThree;       
             }
         }
-        // });
     }
 });
 
 // Define recursive function to print nested values
-function printValues(obj) {
+function printValues(existing, obj) {
     for(var k in obj) {
         if(obj[k] instanceof Object) {
-            return printValues(obj[k]);
+            return existing.append(printValues(obj[k]));
         } else {
-            // document.write(obj[k] + "<br>");
-            var tblRow = "<p>" + obj[k] + "</p>";
-
-            return document.getElementById("one").innerHTML + tblRow;
+            var paragraph = "<p>" + obj[k] + "</p>";
+            return paragraph;
         };
     }
 };
 
+
+// From Megan's initial extension creation:
 
 // event handles for tab updates
 // chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
