@@ -132,6 +132,7 @@ window.onload = function() {
             for (let i = 0; i < passwordRequirements.length; i++) {
                 passwordRequirements[i].style.color = "black";
             }
+            document.querySelector("#password-common span").style.color = "#ab2000";
             return true;
         }
         return false;
