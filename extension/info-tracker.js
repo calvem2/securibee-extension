@@ -44,7 +44,6 @@ function updatePopup() {
 
                         // populate text from json to extension display
                         var textOne = printValues("", obj.platforms.p[i].what);
-                        console.log(textOne);
                         document.getElementById("one").innerHTML = textOne;
                         var textTwo = printValues("", obj.platforms.p[i].who);
                         document.getElementById("two").innerHTML = textTwo;
@@ -65,12 +64,9 @@ function updatePopup() {
 
 // Define recursive function to print nested values
 function printValues(existing, obj) {
+    var section = "";
     for (var k in obj) {
-        if(obj[k] instanceof Object) {
-            return existing.append(printValues(obj[k]));
-        } else {
-            var paragraph = "<p>" + obj[k] + "</p>";
-            return paragraph;
-        }
+        section = section + "<p>" + obj[k] + "</p>";
     }
+    return section;
 }
