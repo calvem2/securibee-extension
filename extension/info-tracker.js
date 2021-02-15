@@ -43,11 +43,11 @@ function updatePopup() {
                         // chrome.browserAction.setPopup({popup: "info-tracker.html", tabId: tabId});
 
                         // populate text from json to extension display
-                        var textOne = printValues("", obj.platforms.p[i].what);
+                        var textOne = printValues(obj.platforms.p[i].what);
                         document.getElementById("one").innerHTML = textOne;
-                        var textTwo = printValues("", obj.platforms.p[i].who);
+                        var textTwo = printValues(obj.platforms.p[i].who);
                         document.getElementById("two").innerHTML = textTwo;
-                        var textThree = printValues("", obj.platforms.p[i].so);
+                        var textThree = printValues(obj.platforms.p[i].so);
                         document.getElementById("three").innerHTML = textThree;
 
                     }
@@ -63,7 +63,7 @@ function updatePopup() {
 };
 
 // Define recursive function to print nested values
-function printValues(existing, obj) {
+function printValues(obj) {
     var section = "";
     for (var k in obj) {
         section = section + "<p>" + obj[k] + "</p>";
