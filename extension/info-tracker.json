@@ -4,27 +4,61 @@
         {
           "name": "google",
           "what": [
-            "Google has a lot of different products, including Google, YouTube, Maps, Gmail, Photos, Chrome, Pixels, Contacts, etc. So, Google has access to a lot of your activity data and usually stores it as well. This includes your (1) location history, (2) web & app activity, and (3) YouTube history."
+            "Google has a lot of different products, including Google, YouTube, Maps, Gmail, Photos, Chrome, Pixels, Contacts, etc. So, Google has access to a lot of your activity data and usually stores it as well. This includes your (1) location history, (2) web & app activity, and (3) YouTube history.",
+            "This is stuff like places that you have been, when you were there, your frequent commutes, Google searches that you have made, websites that you have visited, YouTube videos that you have watched, YouTube searches that you have made, and YouTube comments you’ve made."
           ],
           "who": [
             "For the user, Google says that this data is used to make Google services more useful to you, like improving your Google search results, Google Maps searches, and YouTube recommendations."
           ],
           "so": [
-            "Depending on the type of activity data you want to change, you can do things like view what data Google has on you, pause Google’s tracking, delete some or all of your past data, have Google automatically delete data that is older than some amount of time, or pause Google’s ad personalization."
+            "Depending on the type of activity data you want to change, you can do things like view what data Google has on you, pause Google’s tracking, delete some or all of your past data, have Google automatically delete data that is older than some amount of time, or pause Google’s ad personalization.",
+            "Your location history here: google.com/maps/timeline",
+            "Your web & app history here: myactivity.google.com/activitycontrols/webandapp",
+            "Your YouTube history here: youtube.com/feed/history",
+            "Your Google ad personalization and who Google thinks you are: adssettings.google.com"
           ]
         },
         {
           "name": "facebook",
           "what": [
-            "Facebook has a lot of different products, including Facebook, Facebook Lite, Messenger, Instagram, WhatsApp, and Portal. So, Facebook has access to a lot of your data."
+            "Facebook has a lot of different products, including Facebook, Facebook Lite, Messenger, Instagram, WhatsApp, and Portal. So, Facebook has access to a lot of your data.",
+            "This includes not only the people who may be in your social circles, but also who you talk to most often, your location, what you look like, what things you like, what you message people about.",
+            "However, the overall company’s model is entirely based on ad revenue. In other words, Facebook runs ads for various companies, and Facebook makes the most profit if users click on the ads or otherwise keep using their apps and potentially click on some other ads later on. That is the only way that Facebook is able to offer its platforms without requiring users to pay them directly.",
+            "Using all of the information that Facebook has about you and its billions of other users, Facebook builds a profile about who they think you are and what you might be interested in, and runs ads accordingly.",
+            "This might seem to harmlessly personalize the ads you see to things that may be more interesting to you, but because Facebook profits from you staying engaged, it will try to show the content they think will change your behavior towards clicking on the ads – for anything from shopping to voting – and keep you on your device for as long as possible."
           ],
           "who": [
-            "not sure, elections eek"
+            "Facebook shares that its mission is \"to give people the power to build community and bring the world closer together.\""
           ],
           "so": [
-            "Visit here https://www.facebook.com/privacy/checkup/ to take action on:",
+            "You can view what data Facebook has about you, what non-Facebook accounts can be logged into through Facebook, and change your preferences on what you want to be tracked and whether you want Facebook to recognize your face.",
+            "Visit <a href=\"https://www.facebook.com/privacy/checkup/\">facebook.com/privacy/checkup</a> to take action on:",
             "Who can see what you share",
-            "How to keep your account secure"
+            "How to keep your account secure",
+            "How people can find you on Facebook",
+            "Your data settings on Facebook",
+            "Your ad preferences on Facebook"
+          ]
+        },
+        {
+          "name": "amazon",
+          "what": [
+            "Amazon has many products and services, and they own many other companies. They include Amazon Alexa, Amazon Prime, Amazon Prime Video, Amazon Music, Amazon Web Services, Audible, IMDb, Kindle, Ring, Twitch, Whole Foods, and Zappos.",
+            "So, Amazon has access to a lot of your information, like your shopping habits, interests, voice profile, and more."
+          ],
+          "who": [
+            "Amazon primarily makes its money off of Amazon Web Services, so much so that it is in a financially secure enough position that it is able to do things like dramatically undercut small businesses.",
+            "This is less about what information Amazon may have about you, and more about how much power Amazon owner Jeff Bezos has, the amount that Amazon has caused inhumane harm – to small business owners, immigrant and undocumented communities, and even its own employees – and the responsibility Bezos has to do better."
+          ],
+          "so": [
+            "Amazon prevents you from deleting your order history from Amazon. However, Amazon will allow you to take actions on some other things.",
+            "Take action on:",
+            "Your Amazon devices settings here: www.amazon.com/mycd",
+            "Your Amazon browsing history here: https://www.amazon.com/gp/yourstore/pym/cc/",
+            "Additionally, learn more about Amazon, its issues, and alternatives; and take a stand here:",
+            "threshold.us/c/cancelprime",
+            "threshold.us/c/cancelprime/amazon-alternatives",
+            "makeamazonpay.com"
           ]
         }
       ]
