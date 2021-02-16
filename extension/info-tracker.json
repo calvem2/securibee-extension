@@ -60,6 +60,23 @@
             "threshold.us/c/cancelprime/amazon-alternatives",
             "makeamazonpay.com"
           ]
+        },
+        {
+          "name": "twitter",
+          "what": [
+            "Twitter has information about your location history when you were tweeting, which ads you’re interested in, and more."
+          ],
+          "who": [
+            "Twitter may use this information about your interests, location history to share with non-Twitter companies and run ads for various organizations.",
+            "Unlike other tech companies like Facebook, Twitter has banned \"political content\" in their ads. However, they still profit from you staying engaged and potentially clicking on ads, Twitter will try to show the content they think will change your behavior towards clicking on the ads and keep you on your device for as long as possible."
+          ],
+          "so": [
+            "Visit here twitter.com/settings/privacy_and_safety to view and take action on your:",
+            "Twitter ad personalization preferences",
+            "Sharing settings with non-Twitter websites",
+            "Data sharing with business partners",
+            "Location information"
+          ]
         }
       ]
     }
