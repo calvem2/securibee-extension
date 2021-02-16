@@ -15,10 +15,10 @@
           ],
           "so": [
             "Depending on the type of activity data you want to change, you can do things like view what data Google has on you, pause Google’s tracking, delete some or all of your past data, have Google automatically delete data that is older than some amount of time, or pause Google’s ad personalization.",
-            "Your location history here: google.com/maps/timeline",
-            "Your web & app history here: myactivity.google.com/activitycontrols/webandapp",
-            "Your YouTube history here: youtube.com/feed/history",
-            "Your Google ad personalization and who Google thinks you are: adssettings.google.com"
+            "Your location history here: <a target=\"_blank\" href=\"https://google.com/maps/timeline\">google.com/maps/timeline</a>",
+            "Your web & app history here: <a target=\"_blank\" href=\"https://myactivity.google.com/activitycontrols/webandapp\">myactivity.google.com/activitycontrols/ webandapp</a>",
+            "Your YouTube history here: <a target=\"_blank\" href=\"https://youtube.com/feed/history\">youtube.com/feed/history</a>",
+            "Your Google ad personalization and who Google thinks you are: <a target=\"_blank\" href=\"https://adssettings.google.com\">adssettings.google.com</a>"
           ]
         },
         {
@@ -39,7 +39,7 @@
           ],
           "so": [
             "You can view what data Facebook has about you, what non-Facebook accounts can be logged into through Facebook, and change your preferences on what you want to be tracked and whether you want Facebook to recognize your face.",
-            "Visit <a href=\"https://www.facebook.com/privacy/checkup/\">facebook.com/privacy/checkup</a> to take action on:",
+            "Visit <a target=\"_blank\" href=\"https://www.facebook.com/privacy/checkup/\">facebook.com/privacy/checkup</a> to take action on:",
             "Who can see what you share",
             "How to keep your account secure",
             "How people can find you on Facebook",
@@ -68,12 +68,12 @@
           "so": [
             "Amazon prevents you from deleting your order history from Amazon. However, Amazon will allow you to take actions on some other things.",
             "Take action on:",
-            "Your Amazon devices settings here: www.amazon.com/mycd",
-            "Your Amazon browsing history here: https://www.amazon.com/gp/yourstore/pym/cc/",
+            "Your Amazon devices settings here: <a target=\"_blank\" href=\"https://amazon.com/mycd\">amazon.com/mycd</a>",
+            "Your Amazon browsing history here: <a target=\"_blank\" href=\"https://amazon.com/gp/yourstore/pym/cc/>amazon.com/gp/yourstore/pym/cc/</a>",
             "Additionally, learn more about Amazon, its issues, and alternatives; and take a stand here:",
-            "threshold.us/c/cancelprime",
-            "threshold.us/c/cancelprime/amazon-alternatives",
-            "makeamazonpay.com"
+            "<a target=\"_blank\" href=\"https://threshold.us/c/cancelprime\">threshold.us/c/cancelprime</a>",
+            "<a target=\"_blank\" href=\"https://threshold.us/c/cancelprime/amazon-alternatives\">threshold.us/c/cancelprime/ amazon-alternatives</a>",
+            "<a target=\"_blank\" href=\"https://makeamazonpay.com\">makeamazonpay.com</a>"
           ]
         },
         {
@@ -89,7 +89,7 @@
             "Unlike other tech companies like Facebook, Twitter has banned \"political content\" in their ads. However, they still profit from you staying engaged and potentially clicking on ads, Twitter will try to show the content they think will change your behavior towards clicking on the ads and keep you on your device for as long as possible."
           ],
           "so": [
-            "Visit here twitter.com/settings/privacy_and_safety to view and take action on your:",
+            "Visit <a target=\"_blank\" href=\"https://twitter.com/settings/privacy_and_safety\">twitter.com/settings/privacy_and_safety</a> to view and take action on your:",
             "Twitter ad personalization preferences",
             "Sharing settings with non-Twitter websites",
             "Data sharing with business partners",
