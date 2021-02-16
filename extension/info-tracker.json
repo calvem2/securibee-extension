@@ -69,7 +69,7 @@
             "Amazon prevents you from deleting your order history from Amazon. However, Amazon will allow you to take actions on some other things.",
             "Take action on:",
             "Your Amazon devices settings here: <a target=\"_blank\" href=\"https://amazon.com/mycd\">amazon.com/mycd</a>",
-            "Your Amazon browsing history here: <a target=\"_blank\" href=\"https://amazon.com/gp/yourstore/pym/cc/>amazon.com/gp/yourstore/pym/cc/</a>",
+            "Your Amazon browsing history here: <a target=\"_blank\" href=\"https://amazon.com/gp/yourstore/pym/cc/\">amazon.com/gp/yourstore/pym/cc/</a>",
             "Additionally, learn more about Amazon, its issues, and alternatives; and take a stand here:",
             "<a target=\"_blank\" href=\"https://threshold.us/c/cancelprime\">threshold.us/c/cancelprime</a>",
             "<a target=\"_blank\" href=\"https://threshold.us/c/cancelprime/amazon-alternatives\">threshold.us/c/cancelprime/ amazon-alternatives</a>",
@@ -78,8 +78,7 @@
         },
         {
           "name": [
-            "twitter",
-            ""
+            "twitter"
           ],
           "what": [
             "Twitter has information about your location history when you were tweeting, which ads you’re interested in, and more."
