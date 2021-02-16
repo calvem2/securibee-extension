@@ -31,31 +31,28 @@ function updatePopup() {
                 // look through all platform names included in json
                 var hasInfo = false;
                 for (var i = 0; i < obj.platforms.p.length; i++) {
-
                     // if the domain name matches a platform included in the json,
                     // add icon badge and update the text displayed on extension
-                    if (obj.platforms.p[i].name === domain) {
-                        hasInfo = true;
-                        // chrome.browserAction.setBadgeText({text: "?", tabId: tabs[0].id});
-                        // chrome.browserAction.setBadgeBackgroundColor({color:[0,0,0,0], tabId:tabs[0].id});
+                    for (var j = 0; j < obj.platforms.p[i].name.length; j++) {
+                        if (obj.platforms.p[i].name[j] == domain) {
+                            hasInfo = true;
 
-                        // attempt to make info-tracker popup - nothing happens
-                        // chrome.browserAction.setPopup({popup: "info-tracker.html", tabId: tabId});
+                            // chrome.browserAction.setBadgeText({text: "?", tabId: tabs[0].id});
+                            // chrome.browserAction.setBadgeBackgroundColor({color:[0,0,0,0], tabId:tabs[0].id});
 
-                        // populate text from json to extension display
-                        var textOne = printValues(obj.platforms.p[i].what);
-                        document.getElementById("one").innerHTML = textOne;
-                        var textTwo = printValues(obj.platforms.p[i].who);
-                        document.getElementById("two").innerHTML = textTwo;
-                        var textThree = printValues(obj.platforms.p[i].so);
-                        document.getElementById("three").innerHTML = textThree;
+                            // attempt to make info-tracker popup - nothing happens
+                            // chrome.browserAction.setPopup({popup: "info-tracker.html", tabId: tabId});
 
+                            // populate text from json to extension display
+                            var textOne = printValues(obj.platforms.p[i].what);
+                            document.getElementById("one").innerHTML = textOne;
+                            var textTwo = printValues(obj.platforms.p[i].who);
+                            document.getElementById("two").innerHTML = textTwo;
+                            var textThree = printValues(obj.platforms.p[i].so);
+                            document.getElementById("three").innerHTML = textThree;
+
+                        }
                     }
-                }
-
-                // if json does not have info on this domain, clear badge text
-                if (!hasInfo) {
-                    // chrome.browserAction.setBadgeText({text: "", tabId:tabId});
                 }
             }
         }

@@ -27,13 +27,14 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
                 // look through all platform names included in json
                 var hasInfo = false;
                 for (var i = 0; i < obj.platforms.p.length; i++) {
-
                     // if the domain name matches a platform included in the json,
                     // add icon badge and update the text displayed on extension
-                    if (obj.platforms.p[i].name === domain) {
-                        hasInfo = true;
-                        chrome.browserAction.setBadgeText({text: "?", tabId: tabs[0].id});
-                        chrome.browserAction.setBadgeBackgroundColor({color:[0,0,0,0], tabId:tabs[0].id});
+                    for (var j = 0; j < obj.platforms.p[i].name.length; j++) {
+                        if (obj.platforms.p[i].name[j] == domain) {
+                            hasInfo = true;
+                            chrome.browserAction.setBadgeText({text: "?", tabId: tabs[0].id});
+                            chrome.browserAction.setBadgeBackgroundColor({color:[0,0,0,0], tabId:tabs[0].id});
+                        }
                     }
                 }
 
