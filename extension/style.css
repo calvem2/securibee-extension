@@ -142,6 +142,11 @@ h2 {
     color: #ab2000;
 }
 
+/* website name in info tracking tool */
+.tracker-website {
+    text-transform: uppercase;
+}
+
 /* paragraphs in info tracking tool */
 .tracker-info {
     margin: 10px;

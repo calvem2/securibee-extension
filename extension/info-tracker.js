@@ -51,6 +51,13 @@ function updatePopup() {
                             var textThree = printValues(obj.platforms.p[i].so);
                             document.getElementById("three").innerHTML = textThree;
 
+                            // show domain name
+                            var websiteName = document.getElementsByClassName("tracker-website");
+                            for (var k = 0; k < websiteName.length; k++) {
+                                websiteName[k].innerHTML = obj.platforms.p[i].name[0]; // general domain (e.g. google)
+                                // websiteName[k].innerHTML = domain; // specific domain (e.g. youtube)
+                            }
+                            
                         }
                     }
                 }
