@@ -8,7 +8,6 @@
     "scripts": ["background.js"],
     "persistent": false
   },
-
   "icons": {
     "128": "logo.png"
   },
