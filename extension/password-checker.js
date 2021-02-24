@@ -16,31 +16,7 @@ togglePassword.addEventListener('click', function (e) {
     password.setAttribute('type', type);
     // toggle the eye slash icon
     this.classList.toggle('fa-eye-slash');
-
-    // todo: add icon for autofill and add following code for onclick (right now does it if click eye icon so like need to move it
-    // todo: but also first decide if we even want to do this idk how to like handle if it doesn't work hah...every site is different
-    // - on some sites, won't show up when toggled to reveal password (twitter)
-    // - also requires we have access to every page user is on which could be seen as invasive
-    // todo: only works if password not being shown on site (bc checking against input type = password)
-    let autofillPswd = "securibeePassword = " + JSON.stringify(password.value) +  ";";
-    // autofill += "inputs = document.querySelectorAll('input');"
-    // autofill += "for (let i = 0; i < inputs.length; i++) {if (inputs[i].getAttribute('type') === 'password') {inputs[i].value = securibeePassword;}}";
-    chrome.tabs.executeScript(null, {
-        code:  `${autofillPswd} (${autofill})()`
-    });
 });
-
-function autofill() {
-    // let securibeePassword = password.value;
-    let inputs = document.querySelectorAll('input');
-    for (let i = 0; i < inputs.length; i++) {
-        if (inputs[i].getAttribute('type') === 'password') {
-            inputs[i].value = securibeePassword;
-        }
-    }
-}
-
-
 
 window.onload = function() {
     // add onclick to drop downs
@@ -52,18 +28,6 @@ window.onload = function() {
         // console.log(passwordChecker.value);
         validatePassword();
     };
-
-    // chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
-    //     // chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    //
-    //     // since only one tab should be active and in the current window at once
-    //     // the return variable should only have one entry
-    //     var activeTab = tabs[0];
-    //     var activeTabId = activeTab.id; // or do whatever you need
-    //     chrome.tabs.executeScript(activeTabId, {
-    //         code: `(${modifyDOM})()`
-    //     });
-    // });
 };
 
 // validate password input
