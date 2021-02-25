@@ -6,10 +6,15 @@ window.onload = function() {
     updatePopup();
 };
 
+// update popup with information for current domain
 function updatePopup() {
     document.getElementById("one").innerHTML = background.textOne;
     document.getElementById("two").innerHTML = background.textTwo;
     document.getElementById("three").innerHTML = background.textThree;
+    let websiteName = document.getElementsByClassName("tracker-website");
+    for (let k = 0; k < websiteName.length; k++) {
+        websiteName[k].innerHTML = background.webDomain; // general domain (e.g. google)
+    }
     // chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
     //     // use `url` here inside the callback because it's asynchronous!
     //     // console.log(url);

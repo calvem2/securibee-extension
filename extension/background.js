@@ -1,13 +1,16 @@
 // Once currently active tab has completed loading, display info from info-tracker.json
 // on extension info-tracker tab and add notification icon badge
 
-// Global letiables to hold popup text
+// Global variables to hold popup text
+// todo: format info-tracker for when no info to show
 window.textOne = "";
 window.textTwo = "";
 window.textThree = "";
+window.webDomain = "WEBSITE";
 
-
-chrome.tabs.onActivated.addListener((activeInfo) => {
+// chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+//     if (changeInfo.status === 'complete' && tab.active) {
+chrome.tabs.onUpdated.addListener((activeInfo) => {
     chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
         // use `url` here inside the callback because it's asynchronous!
         // console.log(url);
@@ -24,9 +27,9 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
         let request = new XMLHttpRequest();
         request.open("GET", "./info-tracker.json", true);
         request.send(null);
-        request.onreadystatechange = function() {
-            if ( request.readyState === 4 && request.status === 200 ) {
-                obj = JSON.parse(request.responseText);
+        request.onreadystatechange = function () {
+            if (request.readyState === 4 && request.status === 200) {
+                let obj = JSON.parse(request.responseText);
                 // console.log('object: ', obj);
                 // console.log('first platform in json: ', obj.platforms.p[0].name);
 
@@ -41,19 +44,24 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
                             textOne = printValues(obj.platforms.p[i].what);
                             textTwo = printValues(obj.platforms.p[i].who);
                             textThree = printValues(obj.platforms.p[i].so);
+                            webDomain = domain;
 
+                            // chrome.browserAction.setBadgeText({text: "?", tabId: tabId});
+                            // chrome.browserAction.setBadgeBackgroundColor({color: [0, 0, 0, 0], tabId: tabId});
                             chrome.browserAction.setBadgeText({text: "?", tabId: tabs[0].id});
-                            chrome.browserAction.setBadgeBackgroundColor({color:[0,0,0,0], tabId:tabs[0].id});
+                            chrome.browserAction.setBadgeBackgroundColor({color: [0, 0, 0, 0], tabId: tabs[0].id});
                         }
                     }
                 }
 
                 // if json does not have info on this domain, clear badge text
                 if (!hasInfo) {
-                    chrome.browserAction.setBadgeText({text: "", tabId:tabs[0].id});
+                    // chrome.browserAction.setBadgeText({text: "", tabId: tabId});
+                    chrome.browserAction.setBadgeText({text: "", tabId: tabs[0].id});
                 }
             }
         }
+    // }
     });
 });
 
