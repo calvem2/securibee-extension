@@ -8,16 +8,28 @@ window.textTwo = "";
 window.textThree = "";
 window.webDomain = "WEBSITE";
 
-// chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-//     if (changeInfo.status === 'complete' && tab.active) {
+// update popup when new tab in focus
 chrome.tabs.onActivated.addListener((activeInfo) => {
     updateExtension();
 });
 
+// update popup when url changes
 chrome.tabs.onUpdated.addListener((activeInfo) => {
     updateExtension();
 });
 
+// remove badge when popup is closed
+chrome.runtime.onConnect.addListener(function(port) {
+    if (port.name === "popup") {
+        port.onDisconnect.addListener(function() {
+            chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+                chrome.browserAction.setBadgeText({text: "", tabId: tabs[0].id});
+            });
+        });
+    }
+});
+
+// update extension with relevant popup info, add badge if necessary, and set popup page
 function updateExtension() {
     chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
         // use `url` here inside the callback because it's asynchronous!
@@ -43,7 +55,6 @@ function updateExtension() {
                 // console.log('first platform in json: ', obj.platforms.p[0].name);
 
                 // look through all platform names included in json
-                let hasInfo = false;
                 for (let i = 0; i < obj.platforms.p.length; i++) {
                     // if the domain name matches a platform included in the json,
                     // add icon badge and update the text displayed on extension
@@ -55,27 +66,30 @@ function updateExtension() {
                             textThree = printValues(obj.platforms.p[i].so);
                             webDomain = domain;
 
-                            // chrome.browserAction.setBadgeText({text: "?", tabId: tabId});
-                            // chrome.browserAction.setBadgeBackgroundColor({color: [0, 0, 0, 0], tabId: tabId});
                             chrome.browserAction.setBadgeText({text: "?", tabId: tabs[0].id});
                             chrome.browserAction.setBadgeBackgroundColor({color: [0, 0, 0, 0], tabId: tabs[0].id});
+
+                            // set popup page to info tracker
+                            chrome.browserAction.setPopup({
+                                popup: "info-tracker.html"
+                            });
+                            return;
                         }
                     }
                 }
 
                 // if json does not have info on this domain, clear badge and popup text
-                if (!hasInfo) {
-                    // chrome.browserAction.setBadgeText({text: "", tabId: tabId});
-                    chrome.browserAction.setBadgeText({text: "", tabId: tabs[0].id});
-                    // todo: format info-tracker for when no info to show
-                    textOne = "";
-                    textTwo = "";
-                    textThree = "";
-                    webDomain = "WEBSITE";
-                }
+                chrome.browserAction.setBadgeText({text: "", tabId: tabs[0].id});
+                // todo: format info-tracker for when no info to show
+                textOne = "";
+                textTwo = "";
+                textThree = "";
+                webDomain = "WEBSITE";
+                chrome.browserAction.setPopup({
+                    popup: "password-checker.html"
+                });
             }
         }
-        // }
     });
 }
 

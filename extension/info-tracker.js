@@ -1,6 +1,9 @@
 // get background page of extension
 let background = chrome.extension.getBackgroundPage();
 
+// popup connection listener
+chrome.runtime.connect({ name: "popup" });
+
 window.onload = function() {
     dropdownOnClick();
     updatePopup();
