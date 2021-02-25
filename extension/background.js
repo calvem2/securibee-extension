@@ -10,13 +10,22 @@ window.webDomain = "WEBSITE";
 
 // chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 //     if (changeInfo.status === 'complete' && tab.active) {
+chrome.tabs.onActivated.addListener((activeInfo) => {
+    updateExtension();
+});
+
 chrome.tabs.onUpdated.addListener((activeInfo) => {
+    updateExtension();
+});
+
+function updateExtension() {
     chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
         // use `url` here inside the callback because it's asynchronous!
-        // console.log(url);
 
         // extract raw url and domain name of current tab
-        // let url = new URL(tab.url);
+        if (tabs[0].url === ""){
+            return;
+        }
         let url = new URL(tabs[0].url);
         let simplifiedUrl = url.hostname;
         let urlParts = simplifiedUrl.split('.');
@@ -54,16 +63,21 @@ chrome.tabs.onUpdated.addListener((activeInfo) => {
                     }
                 }
 
-                // if json does not have info on this domain, clear badge text
+                // if json does not have info on this domain, clear badge and popup text
                 if (!hasInfo) {
                     // chrome.browserAction.setBadgeText({text: "", tabId: tabId});
                     chrome.browserAction.setBadgeText({text: "", tabId: tabs[0].id});
+                    // todo: format info-tracker for when no info to show
+                    textOne = "";
+                    textTwo = "";
+                    textThree = "";
+                    webDomain = "WEBSITE";
                 }
             }
         }
-    // }
+        // }
     });
-});
+}
 
 // Define recursive function to print nested values
 function printValues(obj) {
