@@ -41,7 +41,7 @@ function updateExtension() {
         let url = new URL(tabs[0].url);
         let simplifiedUrl = url.hostname;
         let urlParts = simplifiedUrl.split('.');
-        let domain = urlParts[urlParts.length - 2];
+        let domain = urlParts[urlParts.length - 2] + '.' + urlParts[urlParts.length - 1];
         console.log('domain: ', domain);
 
         // parse info-tracker.json into a obj

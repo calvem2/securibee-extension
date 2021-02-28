@@ -3,8 +3,8 @@
       "p": [
         {
           "name": [
-            "google",
-            "youtube"
+            "google.com",
+            "youtube.com"
           ],
           "what": [
             "Google has a lot of different products, including Google, YouTube, Maps, Gmail, Photos, Chrome, Pixels, Contacts, etc. So, Google has access to a lot of your activity data and usually stores it as well. This includes your (1) location history, (2) web & app activity, and (3) YouTube history.",
@@ -23,9 +23,9 @@
         },
         {
           "name": [
-            "facebook",
-            "messenger",
-            "instagram"
+            "facebook.com",
+            "messenger.com",
+            "instagram.com"
           ],
           "what": [
             "Facebook has a lot of different products, including Facebook, Facebook Lite, Messenger, Instagram, WhatsApp, and Portal. So, Facebook has access to a lot of your data.",
@@ -49,13 +49,13 @@
         },
         {
           "name": [
-            "amazon",
-            "wholefoodsmarket",
-            "primevideo",
-            "zappos",
-            "imdb",
-            "twitch",
-            "audible"
+            "amazon.com",
+            "wholefoodsmarket.com",
+            "primevideo.com",
+            "zappos.com",
+            "imdb.com",
+            "twitch.tv",
+            "audible.com"
           ],
           "what": [
             "Amazon has many products and services, and they own many other companies. They include Amazon Alexa, Amazon Prime, Amazon Prime Video, Amazon Music, Amazon Web Services, Audible, IMDb, Kindle, Ring, Twitch, Whole Foods, and Zappos.",
@@ -78,7 +78,7 @@
         },
         {
           "name": [
-            "twitter"
+            "twitter.com"
           ],
           "what": [
             "Twitter has information about your location history when you were tweeting, which ads you’re interested in, and more."
