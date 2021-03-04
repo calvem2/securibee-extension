@@ -2,30 +2,49 @@ let PASSWORD_LENGTH = 12;
 let COMMON_SEQUENCES = ['qwerty', 'asdf', 'zxcvb', 'jkl;', '123', '1234', '123456'];
 const password = document.getElementById('password-input');
 
+let clipboardTimer;
+
 // load common passwords from file
 let commonPswds;
 fetch('commonPasswords.txt')
     .then(response => response.text())
     .then(text => commonPswds = text.split(/\r?\n/));
 
-// add onclick to eye icon
-const togglePassword = document.getElementById('toggle-password');
-togglePassword.addEventListener('click', function (e) {
-    // toggle the type attribute
-    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-    password.setAttribute('type', type);
-    // toggle the eye slash icon
-    this.classList.toggle('fa-eye-slash');
-});
-
 window.onload = function() {
     // add onclick to drop downs
     dropdownOnClick();
 
+    // add onclick to eye icon
+    const togglePassword = document.getElementById('toggle-password');
+    togglePassword.addEventListener('click', function (e) {
+        // toggle the type attribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        // toggle the eye slash icon
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    // add on copy event to password input
+    password.oncopy = function(e) {
+        console.log("set to " + e.target + " @: " + new Date().getSeconds());
+        document.getElementById("subtitle").style.display = "block";
+        clearTimeout(clipboardTimer);
+        clearClipboard();
+    };
+
+    // add copy event to clipboard icon
+    const copyPass = document.getElementById('copy-pass');
+    copyPass.addEventListener('click', function (e) {
+        // toggle the type attribute
+        document.getElementById("subtitle").style.display = "block";
+        clearTimeout(clipboardTimer);
+        copyToClipBoard(password.value);
+        clearClipboard();
+    });
+
     // password checker functionality
-    let passwordChecker = document.getElementById("password-input");
-    passwordChecker.oninput = function () {
-        console.log(passwordChecker.value);
+    // let passwordChecker = document.getElementById("password-input");
+    password.oninput = function () {
         validatePassword();
     };
 };
@@ -190,6 +209,27 @@ function disallowEmojis(password) {
     password = password.replace(/(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/gi, '');
 
     return password;
+}
+
+// copy given text to clipboard
+function copyToClipBoard(text) {
+    var copyFrom = document.createElement("textarea");
+    copyFrom.textContent = text;
+    document.body.appendChild(copyFrom);
+    copyFrom.focus();
+    copyFrom.select();
+    document.execCommand('Copy');
+    document.body.removeChild(copyFrom);
+    console.log("set to " + text + " @: " + new Date().getSeconds());
+}
+
+// clear clipboard
+function clearClipboard() {
+    clipboardTimer = setTimeout(function() {
+        copyToClipBoard(" ");
+        console.log("overridden @: " + + new Date().getSeconds());
+        document.getElementById("subtitle").style.display = "none";
+    }, 30000);
 }
 
 
