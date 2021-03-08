@@ -24,26 +24,13 @@ window.onload = function() {
         this.classList.toggle('fa-eye-slash');
     });
 
-    // add on copy event to password input
-    password.oncopy = function(e) {
-        console.log("set to " + e.target + " @: " + new Date().getSeconds());
-        document.getElementById("subtitle").style.display = "block";
-        clearTimeout(clipboardTimer);
-        clearClipboard();
-    };
-
     // add copy event to clipboard icon
     const copyPass = document.getElementById('copy-pass');
     copyPass.addEventListener('click', function (e) {
-        // toggle the type attribute
-        document.getElementById("subtitle").style.display = "block";
-        clearTimeout(clipboardTimer);
         copyToClipBoard(password.value);
-        clearClipboard();
     });
 
     // password checker functionality
-    // let passwordChecker = document.getElementById("password-input");
     password.oninput = function () {
         validatePassword();
     };
@@ -222,16 +209,6 @@ function copyToClipBoard(text) {
     document.body.removeChild(copyFrom);
     console.log("set to " + text + " @: " + new Date().getSeconds());
 }
-
-// clear clipboard
-function clearClipboard() {
-    clipboardTimer = setTimeout(function() {
-        copyToClipBoard(" ");
-        console.log("overridden @: " + + new Date().getSeconds());
-        document.getElementById("subtitle").style.display = "none";
-    }, 30000);
-}
-
 
 
 
