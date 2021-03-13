@@ -207,7 +207,6 @@ function copyToClipBoard(text) {
     copyFrom.select();
     document.execCommand('Copy');
     document.body.removeChild(copyFrom);
-    console.log("set to " + text + " @: " + new Date().getSeconds());
 }
 
 
