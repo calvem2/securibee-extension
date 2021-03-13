@@ -11,16 +11,12 @@ window.onload = function() {
         permissions: ['tabs'],
         origins: ["https://*/"]
     }, function(result) {
-        // permissionsButton.checked = result;
-        //todo: get rid of
         if (result) {
             // The extension has the permissions.
             permissionsButton.checked = true;
-            console.log("has permissions")
         } else {
             // The extension doesn't have the permissions.
             permissionsButton.checked = false;
-            console.log("does not have permission")
         }
     });
 
@@ -37,15 +33,10 @@ window.onload = function() {
                 permissions: ['tabs'],
                 origins: ["https://*/"]
             }, function(granted) {
-                // permissionsButton.checked = granted;
-                //todo: delte
                 if (granted) {
                     permissionsButton.checked = true;
-                    console.log("granted");
                 } else {
                     permissionsButton.checked = false;
-                    console.log("denied")
-                    // permissionsButton.checked = false;
                 }
             });
         } else {
@@ -53,41 +44,22 @@ window.onload = function() {
                 permissions: ['tabs'],
                 origins: ["https://*/"]
             }, function(removed) {
-                // todo: removed
                 if (removed) {
-                    permissionsButton.checked = false;
                     // The permissions have been removed.
-                    console.log("removed");
+                    permissionsButton.checked = false;
                 } else {
-                    // The permissions have not been removed (e.g., you tried to remove
-                    // required permissions).
-                    console.log("not removed");
+                    permissionsButton.checked = true;
                 }
             });
         }
-
-
-        // todo: get rid of me
-        chrome.permissions.contains({
-            permissions: ['tabs'],
-            origins: ["https://*/"]
-        }, function(result) {
-            if (result) {
-                // The extension has the permissions.
-                console.log("has permissions")
-            } else {
-                // The extension doesn't have the permissions.
-                console.log("does not have permission")
-            }
-        });
 
         // reload page and extension
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
             chrome.tabs.reload(tabs[0].id);
         });
-        // setTimeout(function() {
-        //     window.close();
-        // }, 2000)
+        setTimeout(function() {
+            window.close();
+        }, 2000)
 
     });
 };
