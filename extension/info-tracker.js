@@ -1,12 +1,95 @@
 // get background page of extension
 let background = chrome.extension.getBackgroundPage();
+let permissionsButton = document.querySelector('#permissions input');
 
 // popup connection listener
 chrome.runtime.connect({ name: "popup" });
 
 window.onload = function() {
+    // Check if we have permission to access tabs
+    chrome.permissions.contains({
+        permissions: ['tabs'],
+        origins: ["https://*/"]
+    }, function(result) {
+        // permissionsButton.checked = result;
+        //todo: get rid of
+        if (result) {
+            // The extension has the permissions.
+            permissionsButton.checked = true;
+            console.log("has permissions")
+        } else {
+            // The extension doesn't have the permissions.
+            permissionsButton.checked = false;
+            console.log("does not have permission")
+        }
+    });
+
+    // add onclick for dropdown menus
     dropdownOnClick();
+
+    // update information in popup
     updatePopup();
+
+    // Add listener to settings toggle button to ask for or remove tabs permissions
+    permissionsButton.addEventListener('click', function(event) {
+        if (permissionsButton.checked) {
+            chrome.permissions.request({
+                permissions: ['tabs'],
+                origins: ["https://*/"]
+            }, function(granted) {
+                // permissionsButton.checked = granted;
+                //todo: delte
+                if (granted) {
+                    permissionsButton.checked = true;
+                    console.log("granted");
+                } else {
+                    permissionsButton.checked = false;
+                    console.log("denied")
+                    // permissionsButton.checked = false;
+                }
+            });
+        } else {
+            chrome.permissions.remove({
+                permissions: ['tabs'],
+                origins: ["https://*/"]
+            }, function(removed) {
+                // todo: removed
+                if (removed) {
+                    permissionsButton.checked = false;
+                    // The permissions have been removed.
+                    console.log("removed");
+                } else {
+                    // The permissions have not been removed (e.g., you tried to remove
+                    // required permissions).
+                    console.log("not removed");
+                }
+            });
+        }
+
+
+        // todo: get rid of me
+        chrome.permissions.contains({
+            permissions: ['tabs'],
+            origins: ["https://*/"]
+        }, function(result) {
+            if (result) {
+                // The extension has the permissions.
+                console.log("has permissions")
+            } else {
+                // The extension doesn't have the permissions.
+                console.log("does not have permission")
+            }
+        });
+
+        // reload page and extension
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+            chrome.tabs.reload(tabs[0].id);
+        });
+        // setTimeout(function() {
+        //     window.close();
+        // }, 2000)
+
+    });
 };
 
 // update popup with information for current domain
@@ -18,63 +101,7 @@ function updatePopup() {
     for (let k = 0; k < websiteName.length; k++) {
         websiteName[k].innerHTML = background.webDomain; // general domain (e.g. google)
     }
-    // chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
-    //     // use `url` here inside the callback because it's asynchronous!
-    //     // console.log(url);
-    //
-    //     // extract raw url and domain name of current tab
-    //     // var url = new URL(tab.url);
-    //     let url = new URL(tabs[0].url);
-    //     var simplifiedUrl = url.hostname;
-    //     var urlParts = simplifiedUrl.split('.');
-    //     var domain = urlParts[urlParts.length - 2];
-    //     console.log('domain: ', domain);
-    //
-    //     // parse info-tracker.json into a obj
-    //     var request = new XMLHttpRequest();
-    //     request.open("GET", "./info-tracker.json", true);
-    //     request.send(null)
-    //     request.onreadystatechange = function() {
-    //         if ( request.readyState === 4 && request.status === 200 ) {
-    //             obj = JSON.parse(request.responseText);
-    //             // console.log('object: ', obj);
-    //             // console.log('first platform in json: ', obj.platforms.p[0].name);
-    //
-    //             // look through all platform names included in json
-    //             var hasInfo = false;
-    //             for (var i = 0; i < obj.platforms.p.length; i++) {
-    //                 // if the domain name matches a platform included in the json,
-    //                 // add icon badge and update the text displayed on extension
-    //                 for (var j = 0; j < obj.platforms.p[i].name.length; j++) {
-    //                     if (obj.platforms.p[i].name[j] == domain) {
-    //                         hasInfo = true;
-    //
-    //                         // chrome.browserAction.setBadgeText({text: "?", tabId: tabs[0].id});
-    //                         // chrome.browserAction.setBadgeBackgroundColor({color:[0,0,0,0], tabId:tabs[0].id});
-    //
-    //                         // attempt to make info-tracker popup - nothing happens
-    //                         // chrome.browserAction.setPopup({popup: "info-tracker.html", tabId: tabId});
-    //
-    //                         // populate text from json to extension display
-    //                         var textOne = printValues(obj.platforms.p[i].what);
-    //                         document.getElementById("one").innerHTML = background.textOne;
-    //                         var textTwo = printValues(obj.platforms.p[i].who);
-    //                         document.getElementById("two").innerHTML = textTwo;
-    //                         var textThree = printValues(obj.platforms.p[i].so);
-    //                         document.getElementById("three").innerHTML = textThree;
-    //
-    //                         // show domain name
-    //                         var websiteName = document.getElementsByClassName("tracker-website");
-    //                         for (var k = 0; k < websiteName.length; k++) {
-    //                             websiteName[k].innerHTML = obj.platforms.p[i].name[0]; // general domain (e.g. google)
-    //                             // websiteName[k].innerHTML = domain; // specific domain (e.g. youtube)
-    //                         }
-    //
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // });
 }
+
+
 

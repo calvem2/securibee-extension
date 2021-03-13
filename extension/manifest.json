@@ -12,11 +12,11 @@
     "128": "logo.png"
   },
 
-  "permissions": [
-    "tabs"
+  "optional_permissions": [
+    "tabs", "https://*/"
   ],
 
   "browser_action": {
-    "default_popup": "info-tracker.html"
+    "default_popup": "password-checker.html"
   }
 }

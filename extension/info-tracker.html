@@ -19,11 +19,25 @@
 
 <!--  scroll content section  -->
 <div class="content-scroll-view">
+    <!--  permissions toggle  -->
+    <div id="permissions-container">
+        <p id="permissions-label">information tracking tool</p>
+        <div id="permissions-toggle">
+            <label id="permissions" class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+    <div id="permissions-subtitle">
+        <p>Enabling the information tracker allows securi-bee to read and change all your data on websites you visit.
+            Securi-bee will only use this permission to check the url of your current tab. Toggling the tool on or off will refresh your current page.</p>
+    </div>
+
     <h2 class="tab-title">information tracking tool</h2>
 
     <!--    tracking tool    -->
     <div id="info-tracker">
-        <!--    TODO; dynamically populate website title & info   -->
         <p class="tool-label">what information does <span class="tracker-website">WEBSITE</span> have about me?</p>
         <div id= "one" class="tracker-info">
         </div>
@@ -60,12 +74,10 @@
     </div>
 
     <!--    Link to website    -->
-    <!--  TODO: add link to website  -->
-    <a class="website-link" href="https://securitea.pages.cs.washington.edu/securi-bee-website/index.html" target="_blank">learn more on our website &rarr;</a>
+    <a class="website-link" href="https://securitea.pages.cs.washington.edu/securi-bee-website/topic_pages/info-collect.html" target="_blank">learn more on our website &rarr;</a>
 </div>
 
 <!--  footer  -->
-<!--  TODO: style selected tab  -->
 <div class="flex footer">
     <a class="nav-button">
         <div class="info-tracking-link selected-button">
@@ -83,6 +95,4 @@
 </body>
 <script src="popup.js"></script>
 <script src="info-tracker.js"></script>
-<!--<script src="background.js"></script>-->
-
 </html>
