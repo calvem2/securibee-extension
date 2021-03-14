@@ -5,7 +5,8 @@ Our project consists of a Chrome extension and website that explains internet sa
 non-technical folks. The website will have information about what data tech companies have about users, what is done with 
 that data, how that impacts users, and real world examples of poor security consequences. However, since internet safety 
 information has a tendency to be all in one place and too much information all at once to be easily digestible and actionable, 
-the Chrome extension will share non-invasive pop-ups with specific suggestions based on the website the user is on. 
+the Chrome extension will share non-invasive pop-ups with specific information based on the website the user is on. The extension
+also provides a tool for checking password strength that helps users implement the password security tips they've learned from our website.
 
 ### To Run the Extension
 To access the securi-bee Google Chrome Extension, you can complete the following steps:
