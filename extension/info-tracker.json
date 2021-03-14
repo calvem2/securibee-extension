@@ -17,6 +17,7 @@
           ],
           "so": [
             "Depending on the type of activity data you want to change, you can do things like view what data Google has on you, pause Google’s tracking, delete some or all of your past data, have Google automatically delete data that is older than some amount of time, or pause Google’s ad personalization.",
+            "Take action on:",
             "<ul>",
             "<li>Your location history here: <a target=\"_blank\" href=\"https://google.com/maps/timeline\">google.com/maps/timeline</a></li>",
             "<li>Your web & app history here: <a target=\"_blank\" href=\"https://myactivity.google.com/activitycontrols/webandapp\">myactivity.google.com/activitycontrols/ webandapp</a></li>",
