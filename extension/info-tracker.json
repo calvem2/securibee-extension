@@ -11,14 +11,18 @@
             "This is stuff like places that you have been, when you were there, your frequent commutes, Google searches that you have made, websites that you have visited, YouTube videos that you have watched, YouTube searches that you have made, and YouTube comments you’ve made."
           ],
           "who": [
-            "For the user, Google says that this data is used to make Google services more useful to you, like improving your Google search results, Google Maps searches, and YouTube recommendations."
+            "For the user, Google says that this data is used to make Google services more useful to you, like improving your Google search results, Google Maps searches, and YouTube recommendations.",
+            "Google states, “Google doesn't sell your personal information to anyone.” However, Google still makes money using the information it has on you. Google runs ads for various companies, and Google makes the most profit if users click on the ads. So, using all of the information they have on all of its users and you, Google builds a profile about who they think you are and what you might be interested in, and runs ads accordingly.",
+            "This might seem to harmlessly personalize the ads you see to things that may be more interesting to you, but because Google profits from you staying engaged, it will try to show the content they think will change your behavior towards clicking on the ads – for anything from shopping to voting – and keep you on your device for as long as possible."
           ],
           "so": [
             "Depending on the type of activity data you want to change, you can do things like view what data Google has on you, pause Google’s tracking, delete some or all of your past data, have Google automatically delete data that is older than some amount of time, or pause Google’s ad personalization.",
-            "Your location history here: <a target=\"_blank\" href=\"https://google.com/maps/timeline\">google.com/maps/timeline</a>",
-            "Your web & app history here: <a target=\"_blank\" href=\"https://myactivity.google.com/activitycontrols/webandapp\">myactivity.google.com/activitycontrols/ webandapp</a>",
-            "Your YouTube history here: <a target=\"_blank\" href=\"https://youtube.com/feed/history\">youtube.com/feed/history</a>",
-            "Your Google ad personalization and who Google thinks you are: <a target=\"_blank\" href=\"https://adssettings.google.com\">adssettings.google.com</a>"
+            "<ul>",
+            "<li>Your location history here: <a target=\"_blank\" href=\"https://google.com/maps/timeline\">google.com/maps/timeline</a></li>",
+            "<li>Your web & app history here: <a target=\"_blank\" href=\"https://myactivity.google.com/activitycontrols/webandapp\">myactivity.google.com/activitycontrols/ webandapp</a></li>",
+            "<li>Your YouTube history here: <a target=\"_blank\" href=\"https://youtube.com/feed/history\">youtube.com/feed/history</a></li>",
+            "<li>Your Google ad personalization and who Google thinks you are: <a target=\"_blank\" href=\"https://adssettings.google.com\">adssettings.google.com</a></li>",
+            "</ul>"
           ]
         },
         {
@@ -35,16 +39,21 @@
             "This might seem to harmlessly personalize the ads you see to things that may be more interesting to you, but because Facebook profits from you staying engaged, it will try to show the content they think will change your behavior towards clicking on the ads – for anything from shopping to voting – and keep you on your device for as long as possible."
           ],
           "who": [
-            "Facebook shares that its mission is \"to give people the power to build community and bring the world closer together.\""
+            "Facebook shares that its mission is \"to give people the power to build community and bring the world closer together.\"",
+            "However, the overall company’s model is entirely based on ad revenue. In other words, Facebook runs ads for various companies, and Facebook makes the most profit if users click on the ads or otherwise keep using their apps and potentially click on some other ads later on. That is the only way that Facebook is able to offer its platforms without requiring users to pay them directly.",
+            "Using all of the information that Facebook has about you and its billions of other users, Facebook builds a profile about who they think you are and what you might be interested in, and runs ads accordingly.",
+            "This might seem to harmlessly personalize the ads you see to things that may be more interesting to you, but because Facebook profits from you staying engaged, it will try to show the content they think will change your behavior towards clicking on the ads – for anything from shopping to voting – and keep you on your device for as long as possible."
           ],
           "so": [
             "You can view what data Facebook has about you, what non-Facebook accounts can be logged into through Facebook, and change your preferences on what you want to be tracked and whether you want Facebook to recognize your face.",
             "Visit <a target=\"_blank\" href=\"https://www.facebook.com/privacy/checkup/\">facebook.com/privacy/checkup</a> to take action on:",
-            "Who can see what you share",
-            "How to keep your account secure",
-            "How people can find you on Facebook",
-            "Your data settings on Facebook",
-            "Your ad preferences on Facebook"
+            "<ul>",
+            "<li>Who can see what you share</li>",
+            "<li>How to keep your account secure</li>",
+            "<li>How people can find you on Facebook</li>",
+            "<li>Your data settings on Facebook</li>",
+            "<li>Your ad preferences on Facebook</li>",
+            "</ul>"
           ]
         },
         {
@@ -68,12 +77,16 @@
           "so": [
             "Amazon prevents you from deleting your order history from Amazon. However, Amazon will allow you to take actions on some other things.",
             "Take action on:",
-            "Your Amazon devices settings here: <a target=\"_blank\" href=\"https://amazon.com/mycd\">amazon.com/mycd</a>",
-            "Your Amazon browsing history here: <a target=\"_blank\" href=\"https://amazon.com/gp/yourstore/pym/cc/\">amazon.com/gp/yourstore/pym/cc/</a>",
+            "<ul>",
+            "<li>Your Amazon devices settings here: <a target=\"_blank\" href=\"https://amazon.com/mycd\">amazon.com/mycd</a></li>",
+            "<li>Your Amazon browsing history here: <a target=\"_blank\" href=\"https://amazon.com/gp/yourstore/pym/cc/\">amazon.com/gp/yourstore/pym/cc/</a></li>",
+            "</ul>",
             "Additionally, learn more about Amazon, its issues, and alternatives; and take a stand here:",
-            "<a target=\"_blank\" href=\"https://threshold.us/c/cancelprime\">threshold.us/c/cancelprime</a>",
-            "<a target=\"_blank\" href=\"https://threshold.us/c/cancelprime/amazon-alternatives\">threshold.us/c/cancelprime/ amazon-alternatives</a>",
-            "<a target=\"_blank\" href=\"https://makeamazonpay.com\">makeamazonpay.com</a>"
+            "<ul>",
+            "<li><a target=\"_blank\" href=\"https://threshold.us/c/cancelprime\">threshold.us/c/cancelprime</a></li>",
+            "<li><a target=\"_blank\" href=\"https://threshold.us/c/cancelprime/amazon-alternatives\">threshold.us/c/cancelprime/ amazon-alternatives</a></li>",
+            "<li><a target=\"_blank\" href=\"https://makeamazonpay.com\">makeamazonpay.com</a></li>",
+            "</ul>"
           ]
         },
         {
@@ -89,10 +102,12 @@
           ],
           "so": [
             "Visit <a target=\"_blank\" href=\"https://twitter.com/settings/privacy_and_safety\">twitter.com/settings/privacy_and_safety</a> to view and take action on your:",
-            "Twitter ad personalization preferences",
-            "Sharing settings with non-Twitter websites",
-            "Data sharing with business partners",
-            "Location information"
+            "<ul>",
+            "<li>Twitter ad personalization preferences</li>",
+            "<li>Sharing settings with non-Twitter websites</li>",
+            "<li>Data sharing with business partners</li>",
+            "<li>Location information</li>",
+            "</ul>"
           ]
         }
       ]
