@@ -25,12 +25,10 @@ function update() {
     }, function(result) {
         if (result) {
             // The extension has the permissions.
-            console.log("has permissions");
             updateExtension();
         } else {
             // The extension doesn't have the permissions.
             resetExtension();
-            console.log("does not have permission");
         }
     });
 }
@@ -51,7 +49,6 @@ function updateExtension() {
     chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
         // use `url` here inside the callback because it's asynchronous!
 
-        console.log(tabs[0]);
         // extract raw url and domain name of current tab
         if (tabs[0] === undefined || tabs[0].url === ""){
             return;
@@ -60,8 +57,7 @@ function updateExtension() {
         let simplifiedUrl = url.hostname;
         let urlParts = simplifiedUrl.split('.');
         let domain = urlParts[urlParts.length - 2] + '.' + urlParts[urlParts.length - 1];
-        console.log(url);
-        console.log(domain);
+
         // parse info-tracker.json into a obj
         let request = new XMLHttpRequest();
         request.open("GET", "./info-tracker.json", true);
