@@ -19,33 +19,6 @@
 
 <!--  scroll content section  -->
 <div class="content-scroll-view">
-    <!--  permissions toggle  -->
-    <div id="permissions-container">
-        <p id="permissions-label">information tracking tool</p>
-        <div id="permissions-toggle">
-            <label id="permissions" class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
-        </div>
-    </div>
-    <div id="permissions-subtitle">
-        <p>toggling will refresh your current page</p>
-        <div class="dropdown-container">
-            <div class="flex">
-                <p class="dropdown-title">what does enabling the tool do?</p>
-                <p><i class="arrow down"></i></p>
-            </div>
-            <div class="dropdown-content">
-                <ul>
-                    <li>allows securi-bee to read and change all your data on websites you visit</li>
-                    <li>securi-bee will only use this permission to check the url of your current tab in order to show  information relevant to the current site</li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-
     <h2 class="tab-title">information tracking tool</h2>
 
     <!--    tracking tool    -->
@@ -89,7 +62,33 @@
             </div>
         </div>
     </div>
+    
+    <!--  permissions toggle  -->
+    <div id="permissions-container">
+        <h2 class="section-title">settings</h2>
+        <p>Turning this on or off will refresh your current page to update</p>
+        <div id="permissions-toggle">
+            <label id="permissions" class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+    <div id="permissions-subtitle">
+        <div class="dropdown-container">
+            <div class="flex">
+                <p class="dropdown-title">what does turning on the tool do?</p>
+                <p><i class="arrow down"></i></p>
+            </div>
+            <div class="dropdown-content">
+                <ul>
+                    <li>This allows securi-bee to read and change all your data on websites you visit</li>
+                    <li>Note: securi-bee will only use this permission to check the url of your current tab in order to show  information relevant to the current site</li>
+                </ul>
+            </div>
+        </div>
 
+    </div>
     <!--    Link to website    -->
     <a class="website-link" href="https://securitea.pages.cs.washington.edu/securi-bee-website/topic_pages/info-collect.html" target="_blank">learn more on our website &rarr;</a>
 </div>
