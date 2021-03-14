@@ -2,10 +2,9 @@
 // on extension info-tracker tab and add notification icon badge
 
 // Global variables to hold popup text
-// todo: format info-tracker for when no info to show
-window.textOne = "";
-window.textTwo = "";
-window.textThree = "";
+window.textOne = "We don't have the exact information about this, but we suggest you look through this website's privacy settings to check.";
+window.textTwo = "We don't have the exact information about this, but we suggest you look through this website's privacy settings to ensure your information is safe.";
+window.textThree = "We don't have the exact information about this, but we suggest you look through this website's privacy settings to check.";
 window.webDomain = "WEBSITE";
 
 // update popup when new tab in focus if we have tabs permission
@@ -96,7 +95,7 @@ function updateExtension() {
 
                 // if json does not have info on this domain, clear badge and popup text
                 chrome.browserAction.setBadgeText({text: "", tabId: tabs[0].id});
-                resetExtension();
+                loadNoDomain();
             }
         }
     });
@@ -111,19 +110,25 @@ function printValues(obj) {
     return section;
 }
 
-// todo: format info-tracker for when no info to show
 // reset to default information
 function resetExtension() {
-    textOne = "";
-    textTwo = "";
-    textThree = "";
-    webDomain = "WEBSITE";
+    textOne = "This tool is turned off. You can enable it to view this information by turning this tool on.";
+    textTwo = "This tool is turned off. You can enable it to view this information by turning this tool on.";
+    textThree = "This tool is turned off. You can enable it to view this information by turning this tool on.";
+    webDomain = "THIS WEBSITE";
     chrome.browserAction.setPopup({
         popup: "password-checker.html"
     });
 }
 
-
-
+function loadNoDomain() {
+    textOne = "We don't have the exact information about this, but we suggest you look through this website's privacy settings to check.";
+    textTwo = "We don't have the exact information about this, but we suggest you look through this website's privacy settings to ensure your information is safe.";
+    textThree = "We don't have the exact information about this, but we suggest you look through this website's privacy settings to check.";
+    webDomain = "THIS WEBSITE";
+    chrome.browserAction.setPopup({
+        popup: "password-checker.html"
+    });
+}
 
 
