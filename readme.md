@@ -16,8 +16,8 @@ To access the securi-bee Google Chrome Extension, you can complete the following
 3. Visit chrome://extensions/ and ensure that the "Developer mode" checkbox in the top right-hand corner is checked
 4. Clone our GitLab repo or download zip and unzip 
 5. Click "Load unpacked" button and navigate to the folder you downloaded from GitLab in step 1
-5. Select the inner folder called “extension”
-6. Click the Chrome Extensions puzzle piece icon in the upper right hand corner of Chrome, find securi-bee, and click on the thumbtack icon to pin the extension to your Chrome browser view
+6. Select the inner folder called “extension”
+7. Click the Chrome Extensions puzzle piece icon in the upper right hand corner of Chrome, find securi-bee, and click on the thumbtack icon to pin the extension to your Chrome browser view
 
 ### Team Members:
 * Claire Beard  
