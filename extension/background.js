@@ -105,7 +105,12 @@ function updateExtension() {
 function printValues(obj) {
     var section = "";
     for (var k in obj) {
-        section = section + "<p>" + obj[k] + "</p>";
+        let text = "" + obj[k];
+        if (text.startsWith('<')) {
+            section = section + text;
+        } else {
+            section = section + "<p>" + text + "</p>";
+        }
     }
     return section;
 }

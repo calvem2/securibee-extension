@@ -6,6 +6,7 @@ body {
     width: 290px;
     font-weight: 400;
     font-size: 80%;
+    word-wrap : break-word;
 }
 
 .flex {
