@@ -38,7 +38,9 @@ chrome.runtime.onConnect.addListener(function(port) {
     if (port.name === "popup") {
         port.onDisconnect.addListener(function() {
             chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
-                chrome.browserAction.setBadgeText({text: "", tabId: tabs[0].id});
+                if (tabs[0] !== undefined) {
+                    chrome.browserAction.setBadgeText({text: "", tabId: tabs[0].id});
+                }
             });
         });
     }
@@ -113,9 +115,9 @@ function printValues(obj) {
 
 // reset to default information
 function resetExtension() {
-    textOne = "This tool is turned off. You can enable it to view this information by turning this tool on.";
-    textTwo = "This tool is turned off. You can enable it to view this information by turning this tool on.";
-    textThree = "This tool is turned off. You can enable it to view this information by turning this tool on.";
+    textOne = "This tool is turned off. You can enable it to view this information by turning the tool on in the settings below.";
+    textTwo = "This tool is turned off. You can enable it to view this information by turning the tool on in the settings below.";
+    textThree = "This tool is turned off. You can enable it to view this information by turning the tool on in the settings below.";
     webDomain = "THIS WEBSITE";
     chrome.browserAction.setPopup({
         popup: "password-checker.html"

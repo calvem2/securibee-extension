@@ -11,13 +11,7 @@ window.onload = function() {
         permissions: ['tabs'],
         origins: ["https://*/"]
     }, function(result) {
-        if (result) {
-            // The extension has the permissions.
-            permissionsButton.checked = true;
-        } else {
-            // The extension doesn't have the permissions.
-            permissionsButton.checked = false;
-        }
+        permissionsButton.checked = result;
     });
 
     // add onclick for dropdown menus
@@ -27,29 +21,20 @@ window.onload = function() {
     updatePopup();
 
     // Add listener to settings toggle button to ask for or remove tabs permissions
-    permissionsButton.addEventListener('click', function(event) {
+    permissionsButton.addEventListener('click', (event) => {
         if (permissionsButton.checked) {
             chrome.permissions.request({
                 permissions: ['tabs'],
                 origins: ["https://*/"]
             }, function(granted) {
-                if (granted) {
-                    permissionsButton.checked = true;
-                } else {
-                    permissionsButton.checked = false;
-                }
+                permissionsButton.checked = granted;
             });
         } else {
             chrome.permissions.remove({
                 permissions: ['tabs'],
                 origins: ["https://*/"]
             }, function(removed) {
-                if (removed) {
-                    // The permissions have been removed.
-                    permissionsButton.checked = false;
-                } else {
-                    permissionsButton.checked = true;
-                }
+                permissionsButton.checked = !removed;
             });
         }
 
@@ -59,7 +44,7 @@ window.onload = function() {
         });
         setTimeout(function() {
             window.close();
-        }, 2000)
+        }, 500)
 
     });
 };

@@ -281,19 +281,17 @@ h2 {
 }
 
 #permissions-container {
-    padding: 9px;
-    border-radius: 8px;
+    margin: 10px;
+    position: relative;
 }
 
 #permissions-label {
-    font-weight: 500;
-    display: inline;
-    margin: 0 30px 0 0;
+    padding-left: 60px;
 }
 
 #permissions-toggle {
-    display: inline;
-    margin: 7px;
+    position: absolute;
+    top: 25%;
 }
 
 #permissions-subtitle > p {
@@ -334,8 +332,6 @@ h2 {
     right: 0;
     bottom: 0;
     background-color: #DEDEDE;
-    -webkit-transition: .1s;
-    transition: .1s;
 }
 
 .slider:before {
@@ -346,8 +342,6 @@ h2 {
     left: 1px;
     bottom: 1px;
     background-color: white;
-    -webkit-transition: .1s;
-    transition: .1s;
 }
 
 .slider:after {
