@@ -200,13 +200,31 @@ function disallowEmojis(password) {
 
 // copy given text to clipboard
 function copyToClipBoard(text) {
-    var copyFrom = document.createElement("textarea");
-    copyFrom.textContent = text;
-    document.body.appendChild(copyFrom);
-    copyFrom.focus();
-    copyFrom.select();
-    document.execCommand('Copy');
-    document.body.removeChild(copyFrom);
+    // Only copy if there is text to copy
+    if (text !== "") {
+        let copyFrom = document.createElement("textarea");
+        copyFrom.textContent = text;
+        document.body.appendChild(copyFrom);
+        copyFrom.focus();
+        copyFrom.select();
+        document.execCommand('Copy');
+        document.body.removeChild(copyFrom);
+        copyAlert();
+    }
+}
+
+// Display the password copied alert for a limited amount of time
+function copyAlert() {
+    // ms to wait before hiding the copied alert after displaying
+    let hideTimeout = 2500;
+    // Display the copy text
+    let customAlert = document.getElementById("item-copied");
+    customAlert.style.display = "flex";
+
+    // Set up a timer to hide the copied alert
+    setTimeout(function() {
+        customAlert.style.display = "none";
+    }, hideTimeout)
 }
 
 

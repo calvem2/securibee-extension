@@ -101,6 +101,13 @@ h2 {
     color: gray;
 }
 
+/* text that password was copied */
+#item-copied {
+    margin-left: 20px;
+    display: none;
+    color: dimgray;
+}
+
 /* warning for common passwords */
 #common-password-warning {
     margin-left: 10px;
